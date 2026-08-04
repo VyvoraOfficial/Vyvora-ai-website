@@ -15,6 +15,7 @@ body{
 }
 
 
+
 .logo{
     font-size:28px;
     font-weight:bold;
@@ -135,7 +136,19 @@ overflow:hidden;
 }
 /* ===== NAVBAR ===== */
 
-
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 8%;
+    background:rgba(10,10,20,.55);
+    backdrop-filter:blur(18px);
+    z-index:1000;
+}
 .logo{
 
 font-size:30px;
@@ -145,7 +158,22 @@ font-weight:700;
 }
 
 .logo span{
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
 
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#60a5fa;
+}
 color:#3b82f6;
 
 }
@@ -181,8 +209,8 @@ display:flex;
 justify-content:space-between;
 
 align-items:center;
-
-padding:170px 8% 120px;
+flex-wrap:wrap;
+padding:140px 8% 100px;
 
 min-height:100vh;
 
