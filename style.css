@@ -185,12 +185,7 @@ ul{
 }
 
 .glass-card{
-    .hero-right{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-    align-items:start;
-}
+
     width:320px;
     padding:30px;
     border-radius:24px;
