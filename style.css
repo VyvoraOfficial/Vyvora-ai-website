@@ -423,4 +423,38 @@ transform:translateY(40px);
 
 .glass-card{
     animation:float 4s ease-in-out infinite;
+}/* ===== LOADER ===== */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#08111f;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:opacity .6s ease, visibility .6s ease;
+}
+
+.loader-logo{
+    font-size:42px;
+    font-weight:700;
+    color:#60a5fa;
+    animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+        opacity:1;
+    }
+    50%{
+        transform:scale(1.08);
+        opacity:.7;
+    }
+}
+
+#loader.hidden{
+    opacity:0;
+    visibility:hidden;
 }
