@@ -10,6 +10,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -34,7 +36,7 @@ VYVORA <span>AI</span>
 
 <section class="hero">
 
-<div class="hero-left">
+<div class="hero-left" data-aos="fade-right"></div>
 
 <h1>
 Automate Your Business With
@@ -61,7 +63,7 @@ Contact Us
 
 </div>
 
-<div class="hero-right">
+<div class="hero-right" data-aos="fade-left"></div>
 
 <div class="glass-card">
 <h3>🤖 AI Chatbot</h3>
@@ -87,7 +89,7 @@ Contact Us
 
 <h2>Our Services</h2>
 
-<div class="cards">
+<div class="cards" data-aos="fade-up"></div>
 
 <div class="card">
 <h3>🤖 AI Chatbots</h3>
@@ -115,7 +117,7 @@ Contact Us
 
 <!-- ================= ABOUT ================= -->
 
-<section id="about" class="about">
+<section id="about" class="about" data-aos="fade-up"></section>
 
 <div class="about-left">
 
@@ -220,8 +222,14 @@ Contact Vyvora AI
 
 <script src="script.js"></script>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration:1000,
+    once:true
+});
+</script>
 </body>
 
-</html>
-</body>
 </html>

@@ -69,10 +69,14 @@ ul{
     transition:.3s;
 }
 
-.nav-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 20px rgba(79,140,255,.45);
+.btn:hover{
+
+transform:translateY(-5px) scale(1.05);
+
+box-shadow:0 0 35px rgba(79,140,255,.45);
+
 }
+
 /* ================= HERO ================= */
 
 .hero{
@@ -318,4 +322,46 @@ padding:35px;
 text-align:center;
 background:#050b15;
 color:#94a3b8;
+}body::before{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+
+height:500px;
+
+background:#2563eb;
+
+filter:blur(220px);
+
+opacity:.18;
+
+top:-200px;
+
+right:-150px;
+
+pointer-events:none;
+
+z-index:-1;
+
+animation:floatGlow 8s ease-in-out infinite;
+
+}
+
+@keyframes floatGlow{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(40px);
+
+}
+
 }
