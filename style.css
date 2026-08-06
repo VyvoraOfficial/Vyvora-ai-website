@@ -464,3 +464,64 @@ transform:translateY(40px);
     opacity:0;
     visibility:hidden;
 }
+/* CONTACT */
+
+.contact{
+    text-align:center;
+    padding:120px 8%;
+}
+
+.contact h2{
+    font-size:52px;
+    margin-bottom:20px;
+}
+
+.contact p{
+    max-width:700px;
+    margin:auto;
+    color:#cbd5e1;
+    font-size:20px;
+    line-height:1.8;
+}
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:45px;
+    flex-wrap:wrap;
+}/* Floating background blobs */
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+    animation:floatBlob 10s ease-in-out infinite alternate;
+}
+
+body::before{
+    background:#2563eb55;
+    top:-120px;
+    left:-120px;
+}
+
+body::after{
+    background:#3b82f655;
+    bottom:-120px;
+    right:-120px;
+    animation-delay:3s;
+}
+
+@keyframes floatBlob{
+    from{
+        transform:translate(0,0) scale(1);
+    }
+    to{
+        transform:translate(80px,-60px) scale(1.2);
+    }
+}
