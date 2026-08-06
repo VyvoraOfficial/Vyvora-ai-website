@@ -20,29 +20,40 @@ window.addEventListener("scroll", () => {
         navbar.style.background = "rgba(8,17,31,.65)";
     }
 
-});const counters = document.querySelectorAll(".counter");
+});
+const counters = document.querySelectorAll(".counter");
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
 
             const counter = entry.target;
-            const target = +counter.dataset.target;
-
+            const target = parseInt(counter.dataset.target);
             let count = 0;
 
-            const update = () => {
+            const updateCounter = () => {
                 count += Math.ceil(target / 50);
 
-                if (count >= target) {
-                    counter.innerText = target + "+";
-                } else {
-                    counter.innerText = count;
-                    requestAnimationFrame(update);
-                }
-            };
+                
+                const updateCounter = () => {
+    count += Math.ceil(target / 50);
 
-            update();
+    if (count >= target) {
+        if (target === 99) {
+            counter.innerText = "99%";
+        } else if (target === 100 || target === 500) {
+            counter.innerText = target + "+";
+        } else {
+            counter.innerText = target;
+        }
+    } else {
+        counter.innerText = count;
+        requestAnimationFrame(updateCounter);
+    }
+};
+}
+
+            updateCounter();
             observer.unobserve(counter);
         }
     });
