@@ -56,3 +56,27 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 counters.forEach(counter => observer.observe(counter));
+/* ================= PARTICLES ================= */
+
+const particles = document.getElementById("particles");
+
+for(let i = 0; i < 40; i++){
+
+    const particle = document.createElement("span");
+
+    particle.classList.add("particle");
+
+    particle.style.left = Math.random() * 100 + "%";
+
+    particle.style.animationDuration =
+        (6 + Math.random() * 10) + "s";
+
+    particle.style.animationDelay =
+        Math.random() * 5 + "s";
+
+    particle.style.opacity =
+        Math.random();
+
+    particles.appendChild(particle);
+
+}
