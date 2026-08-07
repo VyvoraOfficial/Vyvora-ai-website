@@ -553,3 +553,21 @@ body::after{
         transform:translateY(-10vh);
     }
 }
+/* ================= CURSOR GLOW ================= */
+
+#cursor-glow{
+    position:fixed;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+    rgba(59,130,246,.22) 0%,
+    rgba(59,130,246,.10) 35%,
+    transparent 70%);
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    z-index:-1;
+    transition:
+    left .08s linear,
+    top .08s linear;
+}

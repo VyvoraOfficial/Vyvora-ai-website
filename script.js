@@ -80,3 +80,13 @@ for(let i = 0; i < 40; i++){
     particles.appendChild(particle);
 
 }
+/* ================= CURSOR GLOW ================= */
+
+const glow = document.getElementById("cursor-glow");
+
+document.addEventListener("mousemove",(e)=>{
+
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+
+});
