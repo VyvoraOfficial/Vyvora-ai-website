@@ -15,12 +15,13 @@ window.addEventListener("scroll", () => {
     if (!navbar) return;
 
     if (window.scrollY > 50) {
-        navbar.style.background = "rgba(5,10,20,.9)";
+        navbar.classList.add("scrolled");
     } else {
-        navbar.style.background = "rgba(8,17,31,.65)";
+        navbar.classList.remove("scrolled");
     }
 
 });
+
 const counters = document.querySelectorAll(".counter");
 
 const observer = new IntersectionObserver((entries) => {
