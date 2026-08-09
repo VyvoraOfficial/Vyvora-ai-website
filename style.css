@@ -707,3 +707,32 @@ footer {
         transform 0.6s ease,
         opacity 0.6s ease;
 }
+/* ================= V5 SERVICE CARDS ================= */
+
+.service-icon {
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+.service-features {
+    margin: 22px 0;
+    padding: 0;
+    color: #cbd5e1;
+    line-height: 2;
+}
+
+.service-btn {
+    display: inline-block;
+    margin-top: auto;
+    padding: 11px 18px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #00bfff, #007bff);
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.service-btn:hover {
+    transform: translateX(4px);
+    box-shadow: 0 8px 25px rgba(0, 191, 255, 0.25);
+}
