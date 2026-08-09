@@ -505,13 +505,13 @@ body::after{
 }
 
 body::before{
-    background:#2563eb55;
+    background:rgba(37,99,235,0.18);
     top:-120px;
     left:-120px;
 }
 
 body::after{
-    background:#3b82f655;
+    background:rgba(59,130,246,0.15);
     bottom:-120px;
     right:-120px;
     animation-delay:3s;
@@ -538,4 +538,172 @@ body::after{
 
 body{
     overflow-x:hidden;
+}
+/* ================= V4 FLOATING PARTICLES ================= */
+
+#particles {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 50%;
+    opacity: 0.55;
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.8);
+    animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+    from {
+        transform: translateY(105vh);
+    }
+
+    to {
+        transform: translateY(-10vh);
+    }
+}.navbar,
+.hero,
+.services,
+.about,
+.stats,
+.contact,
+footer {
+    position: relative;
+    z-index: 1;
+}
+/* ================= V4 MOUSE HOVER GLOW ================= */
+
+.glass-card,
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before,
+.card::before {
+    content: "";
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(96, 165, 250, 0.22),
+        transparent 70%
+    );
+
+    transform: translate(-50%, -50%);
+
+    left: var(--mouse-x, -200px);
+    top: var(--mouse-y, -200px);
+
+    pointer-events: none;
+    transition: left 0.08s linear, top 0.08s linear;
+}
+/* ================= V4 MOBILE NAVBAR ================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 14px 5%;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .logo {
+        flex: none;
+    }
+
+    .nav-links {
+        width: 100%;
+        gap: 18px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+}
+/* ================= V4 BETTER BUTTONS ================= */
+
+.btn,
+.btn-outline,
+.nav-btn {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.btn:hover,
+.nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
+}
+
+.btn-outline:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(96, 165, 250, 0.2);
+}
+
+/* Moving shine */
+
+.btn::after,
+.btn-outline::after,
+.nav-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+}
+
+.btn:hover::after,
+.btn-outline:hover::after,
+.nav-btn:hover::after {
+    left: 140%;
+}/* ================= V4 SMOOTH SECTION REVEALS ================= */
+
+.services,
+.about,
+.stats,
+.contact {
+    scroll-margin-top: 80px;
+}
+
+.services,
+.about,
+.stats,
+.contact {
+    transition:
+        transform 0.6s ease,
+        opacity 0.6s ease;
 }

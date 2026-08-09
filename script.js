@@ -55,4 +55,64 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
-counters.forEach(counter => observer.observe(counter));
+counters.forEach(counter => observer.observe(counter));/* ================= V4 FLOATING PARTICLES ================= */
+
+const particleContainer = document.getElementById("particles");
+
+if (particleContainer) {
+
+    for (let i = 0; i < 45; i++) {
+
+        const particle = document.createElement("div");
+
+        particle.classList.add("particle");
+
+        particle.style.left = Math.random() * 100 + "%";
+
+        particle.style.animationDuration =
+            (8 + Math.random() * 12) + "s";
+
+        particle.style.animationDelay =
+            (Math.random() * 10) + "s";
+
+        const size = 2 + Math.random() * 3;
+
+        particle.style.width = size + "px";
+        particle.style.height = size + "px";
+
+        particleContainer.appendChild(particle);
+    }
+}
+/* ================= V4 SCROLL ANIMATIONS ================= */
+
+AOS.init({
+    duration: 900,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 80
+});
+/* ================= V4 MOUSE HOVER GLOW ================= */
+
+const glowCards = document.querySelectorAll(".glass-card, .card");
+
+glowCards.forEach((card) => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.setProperty("--mouse-x", "-200px");
+        card.style.setProperty("--mouse-y", "-200px");
+
+    });
+
+});
