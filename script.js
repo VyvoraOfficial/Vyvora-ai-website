@@ -15,13 +15,12 @@ window.addEventListener("scroll", () => {
     if (!navbar) return;
 
     if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
+        navbar.style.background = "rgba(5,10,20,.9)";
     } else {
-        navbar.classList.remove("scrolled");
+        navbar.style.background = "rgba(8,17,31,.65)";
     }
 
 });
-
 const counters = document.querySelectorAll(".counter");
 
 const observer = new IntersectionObserver((entries) => {
@@ -56,38 +55,64 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
-counters.forEach(counter => observer.observe(counter));
-/* ================= PARTICLES ================= */
+counters.forEach(counter => observer.observe(counter));/* ================= V4 FLOATING PARTICLES ================= */
 
-const particles = document.getElementById("particles");
+const particleContainer = document.getElementById("particles");
 
-for(let i = 0; i < 40; i++){
+if (particleContainer) {
 
-    const particle = document.createElement("span");
+    for (let i = 0; i < 45; i++) {
 
-    particle.classList.add("particle");
+        const particle = document.createElement("div");
 
-    particle.style.left = Math.random() * 100 + "%";
+        particle.classList.add("particle");
 
-    particle.style.animationDuration =
-        (6 + Math.random() * 10) + "s";
+        particle.style.left = Math.random() * 100 + "%";
 
-    particle.style.animationDelay =
-        Math.random() * 5 + "s";
+        particle.style.animationDuration =
+            (8 + Math.random() * 12) + "s";
 
-    particle.style.opacity =
-        Math.random();
+        particle.style.animationDelay =
+            (Math.random() * 10) + "s";
 
-    particles.appendChild(particle);
+        const size = 2 + Math.random() * 3;
 
+        particle.style.width = size + "px";
+        particle.style.height = size + "px";
+
+        particleContainer.appendChild(particle);
+    }
 }
-/* ================= CURSOR GLOW ================= */
+/* ================= V4 SCROLL ANIMATIONS ================= */
 
-const glow = document.getElementById("cursor-glow");
+AOS.init({
+    duration: 900,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 80
+});
+/* ================= V4 MOUSE HOVER GLOW ================= */
 
-document.addEventListener("mousemove",(e)=>{
+const glowCards = document.querySelectorAll(".glass-card, .card");
 
-    glow.style.left = e.clientX + "px";
-    glow.style.top = e.clientY + "px";
+glowCards.forEach((card) => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.setProperty("--mouse-x", "-200px");
+        card.style.setProperty("--mouse-y", "-200px");
+
+    });
 
 });
