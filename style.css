@@ -1082,4 +1082,97 @@ footer {
         grid-template-columns: 1fr;
     }
 
+}/* ================= V5 PROCESS CONNECTOR ================= */
+
+.process-grid {
+    position: relative;
+}
+
+.process-card {
+    z-index: 1;
+}
+
+/* Connector line */
+
+.process-grid::before {
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    left: 8%;
+    right: 8%;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(96, 165, 250, 0.35),
+        rgba(96, 165, 250, 0.35),
+        transparent
+    );
+
+    z-index: 0;
+}
+
+/* Keep mobile layout clean */
+
+@media (max-width: 900px) {
+
+    .process-grid::before {
+        display: none;
+    }
+
+}/* ================= V5 PROCESS FLOW ANIMATION ================= */
+
+.process-grid::after {
+    content: "";
+    position: absolute;
+
+    top: calc(50% - 3px);
+    left: 8%;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #60a5fa;
+    box-shadow:
+        0 0 10px rgba(96, 165, 250, 0.8),
+        0 0 25px rgba(96, 165, 250, 0.5);
+
+    animation: processFlow 4s linear infinite;
+
+    z-index: 2;
+}
+
+@keyframes processFlow {
+
+    0% {
+        left: 8%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 92%;
+        opacity: 0;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .process-grid::after {
+        display: none;
+    }
+
 }
