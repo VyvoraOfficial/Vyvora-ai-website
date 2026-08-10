@@ -115,4 +115,55 @@ glowCards.forEach((card) => {
 
     });
 
+});/* ================= V5 CONTACT FORM ================= */
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const service = document.getElementById("service").value;
+        const message = document.getElementById("message").value.trim();
+
+        const subject = encodeURIComponent(
+            `New Vyvora AI Enquiry - ${service}`
+        );
+
+        const body = encodeURIComponent(
+`Hello Vyvora AI,
+
+Name: ${name}
+Email: ${email}
+Service: ${service}
+
+Requirement:
+${message}
+
+Sent from the Vyvora AI website.`
+        );
+
+        window.location.href =
+            `mailto:vyvora.ai.business@gmail.com?subject=${subject}&body=${body}`;
+    });
+}/* ================= V5 SERVICE SELECTION ================= */
+
+const serviceButtons = document.querySelectorAll(".service-btn");
+const serviceSelect = document.getElementById("service");
+
+serviceButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const selectedService = button.dataset.service;
+
+        if (serviceSelect && selectedService) {
+            serviceSelect.value = selectedService;
+        }
+
+    });
+
 });

@@ -128,9 +128,9 @@
         <li>✓ Instant responses</li>
     </ul>
 
-    <a href="#contact" class="service-btn">
-        Get Started →
-    </a>
+    <a href="#contact" class="service-btn" data-service="AI Chatbots">
+    Get Started →
+</a>
 
 </div>
 
@@ -151,9 +151,9 @@
         <li>✓ Smart task processing</li>
     </ul>
 
-    <a href="#contact" class="service-btn">
-        Get Started →
-    </a>
+    <a href="#contact" class="service-btn" data-service="AI Automation">
+    Get Started →
+</a>
 
 </div>
         <div class="card" data-aos="fade-up" data-aos-delay="200">
@@ -173,9 +173,9 @@
         <li>✓ Call handling automation</li>
     </ul>
 
-    <a href="#contact" class="service-btn">
-        Get Started →
-    </a>
+    <a href="#contact" class="service-btn" data-service="Voice Agents">
+    Get Started →
+</a>
 
 </div>
 
@@ -196,9 +196,9 @@
         <li>✓ Smart follow-ups</li>
     </ul>
 
-    <a href="#contact" class="service-btn">
-        Get Started →
-    </a>
+    <a href="#contact" class="service-btn" data-service="Lead Generation">
+    Get Started →
+</a>
 
 </div>
 
@@ -286,7 +286,51 @@
         </a>
 
     </div>
+<div class="contact-form">
 
+    <h3>Tell us what you need</h3>
+
+    <form id="contactForm">
+
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+        >
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            required
+        >
+
+        <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option value="AI Chatbots">AI Chatbots</option>
+            <option value="AI Automation">AI Automation</option>
+            <option value="Voice Agents">Voice Agents</option>
+            <option value="Lead Generation">Lead Generation</option>
+        </select>
+
+        <textarea
+            id="message"
+            name="message"
+            placeholder="Tell us about your requirement..."
+            rows="5"
+            required
+        ></textarea>
+
+        <button type="submit" class="btn">
+            Send Enquiry →
+        </button>
+
+    </form>
+
+</div>
 </section>
 
 <!-- ================= FOOTER ================= -->
